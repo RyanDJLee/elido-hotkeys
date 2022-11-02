@@ -273,6 +273,7 @@ function gotoSpace(space_sel, withinDisplay)
         targetIndex = cycleTableIndex(spaces, spacePos, space_sel)
         execTaskInShellSync("yabai -m space --focus " .. targetIndex)
     else
-        execTaskInShellSync("yabai -m space --focus " .. space_sel)
+        -- get spaces
+        execTaskInShellSync("sh /Users/ryandjlee/Desktop/elido-hotkeys/src/move_to_space.sh " .. space_sel)
     end
 end

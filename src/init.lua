@@ -9,6 +9,7 @@ require("yabai")
 -- Debugging hotkeys
 cwrap(function()
     debugMode = getenv("ELIDO_HOTKEY_DEBUG") == "1"
+    debugMode = true
 
     -- Check if debug mode is enabled
     if debugMode then
@@ -136,6 +137,37 @@ cwrap(function()
     end)
 
     -- Switch Space
+    hs.hotkey.bind("alt", "1", cwrap(function()
+        gotoSpace(1, false)
+    end))
+    hs.hotkey.bind("alt", "2", cwrap(function()
+        gotoSpace(2, false)
+    end))
+    hs.hotkey.bind("alt", "3", cwrap(function()
+        gotoSpace(3, false)
+    end))
+    hs.hotkey.bind("alt", "4", cwrap(function()
+        gotoSpace(4, false)
+    end))
+    hs.hotkey.bind("alt", "5", cwrap(function()
+        gotoSpace(5, true)
+    end))
+    hs.hotkey.bind("alt", "6", cwrap(function()
+        gotoSpace(6, true)
+    end))
+    hs.hotkey.bind("alt", "7", cwrap(function()
+        gotoSpace(7, true)
+    end))
+    hs.hotkey.bind("alt", "8", cwrap(function()
+        gotoSpace(8, true)
+    end))
+    hs.hotkey.bind("alt", "9", cwrap(function()
+        gotoSpace(9, true)
+    end))
+    hs.hotkey.bind("alt", "0", cwrap(function()
+        gotoSpace(10, true)
+    end))
+
     hs.hotkey.bind("alt", ";", cwrap(function()
         gotoSpace("prev", true)
     end))
