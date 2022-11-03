@@ -142,6 +142,14 @@ function getFocusedDisplayIndexFromSpace(displays, space)
     return focusedIndex
 end
 
+function closeWindow()
+    local win
+
+    execTaskInShellAsync("yabai -m window --close")
+    win = getFocusedWindow()
+    execTaskInShellSync("yabai -m window --focus " .. toint(win["id"]))
+end
+
 -- Move window to selected space. If a window id is not provided, the currently focused window id is used
 -- This call will hang hammerspoon if done on the main thread (https://github.com/koekeishiya/yabai/issues/502#issuecomment-633353477)
 -- under the hood execTaskInShellSync expects to  be called within a coroutine to solve that issue

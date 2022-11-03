@@ -29,3 +29,8 @@ yabai -m config left_padding 8
 yabai -m config right_padding 8
 yabai -m config top_padding 8
 yabai -m config bottom_padding 8
+
+# focus window after active space changes
+# focus window after active display changes
+yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"

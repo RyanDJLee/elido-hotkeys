@@ -212,4 +212,14 @@ cwrap(function()
         execTaskInShellAsync("yabai -m window --toggle float")
     end)
 
+    -- App Specific
+    hs.hotkey.bind("alt", "return", function()
+        execTaskInShellSync("osascript /Users/ryandjlee/Library/Scripts/new-iterm-window.scpt")
+        -- hs.application.open("Terminal.app")
+    end)
+
+    hs.hotkey.bind("alt-shift", "q", function()
+        closeWindow()
+    end)
+
 end)()
